@@ -44,7 +44,7 @@ for i in range(10):
         
     my_results[i]=dataOut
 
-my_stds=np.std(my_results, axis=0)
+my_stds=np.std(my_results, axis=0) #biggest one (i.e first measurement) is of 1.45297
 
 # Main experiment, we compare this to the previous 10s above
 value=255
