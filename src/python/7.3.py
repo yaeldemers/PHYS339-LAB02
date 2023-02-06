@@ -104,6 +104,11 @@ for i in range(75):
     low_bound[i]=func(full_span[i], popt[0]-250*perr[0], popt[1]-250*perr[1])
     high_bound[i]=func(full_span[i], popt[0]+250*perr[0], popt[1]+250*perr[1])
 
+# Chi2 to assess quality of the fit
+difference = abs(manual_data-expected_out)
+
+chi2 = np.sum(np.square(difference[1:])/full_span[1:])  #7.937540073230527
+    
 # Plotting the curve, scatter plot and error
 plt.plot(full_span, expected_out, linewidth=1, color='black')
 plt.scatter(full_span, manual_data, s=15)
